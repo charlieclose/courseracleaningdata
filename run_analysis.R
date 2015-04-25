@@ -26,6 +26,7 @@ run_analysis <- function(){
                                ,V349,V350,V424,V425,V426,V427,V428,V429,V503
                                ,V504,V516,V517,V529,V530,V542,V543)
     
+    # Apply the correct column headers.
     column_names <- c("subject" 
                       ,"activity"
                       ,"timeBodyAccMeanX","timeBodyAccMeanY","timeBodyAccMeanZ"
@@ -84,6 +85,7 @@ run_analysis <- function(){
                                 ,V349,V350,V424,V425,V426,V427,V428,V429,V503
                                 ,V504,V516,V517,V529,V530,V542,V543)
     
+    #Apply the correct column names.
     colnames(data_train_subset) <- column_names
     
     
@@ -167,6 +169,7 @@ run_analysis <- function(){
     write.table(summarized, "./step5.txt", quote=FALSE, row.names=FALSE)
 }
 
+# Maps activityId values to the corresponding text value.
 translate_activity <- function(activityId){
     
     if (activityId == 1){
@@ -185,7 +188,3 @@ translate_activity <- function(activityId){
     
     activity
 }
-
-
-
-

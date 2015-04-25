@@ -13,12 +13,12 @@ I used the following files as inputs.
 
 |Filename|Data Description|
 |--------|----------------|
-|subject\_test.txt|Subject ID's from the Test set.|
-|y\_test.txt|Activity ID's from the Test set.|
-|X\_test.txt|Measurements from the Test set.|
-|subject_train.txt|Subject ID's from the Train set.|
-|y\_train.txt|Activity ID's from the Train set.|
-|X\_train.txt|Measurements from the Train set.|
+|subject\_test.txt|Subject ID's from the Test data set.|
+|y\_test.txt|Activity ID's from the Test data set.|
+|X\_test.txt|Measurements from the Test data set.|
+|subject_train.txt|Subject ID's from the Train data set.|
+|y\_train.txt|Activity ID's from the Train data set.|
+|X\_train.txt|Measurements from the Train data set.|
 
 I did NOT find it necessary to use any of the data in the ```Inertial Signals``` folders.
 

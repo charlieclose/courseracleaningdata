@@ -3,7 +3,6 @@
 ## Introduction
 This is a writeup of the Coursera Cleaning Data Project. 
 
-
 ## Initial Data
 The initial data was provided as part of the assignment, in the file
 ```getdata-projectfiles-UCI HAR Dataset.zip```
@@ -23,21 +22,14 @@ I used the following files as inputs.
 
 I did NOT find it necessary to use any of the data in the ```Inertial Signals``` folders.
 
-
 ## Assignment
-was to
-clean
-provide tidy data set
+The assignment was to read the measurements in the test and training data sets, combine them, tidy them, and output the mean of the measurements grouped by activity and subject ID.
 
 ## Variables applied
 
-The assignment called for selecting out the mean and standard deviation variables from
-the original data sets. There was some room for interpretation here since there were
-different kinds of mean variables.
+The assignment called for selecting out the mean and standard deviation variables from the original data sets. There was some room for interpretation here since there were different kinds of mean variables.
 
-I interpreted the requirement to mean (no pun intended) all variables whose names were 
-of the form *-mean() or *-std(). This included 33 mean columns and 33 standard deviation
-columns.
+I interpreted the requirement to mean all variables whose names were of the form *-mean() and *-std(). This included 33 mean columns and 33 standard deviation columns.
 
 |Column Number|Original Variable Name|
 |-------------|----------------------|
@@ -108,19 +100,11 @@ columns.
 |542|fBodyBodyGyroJerkMag-mean()|
 |543|fBodyBodyGyroJerkMag-std()|
 
-
-
-
 ## Tidy standards applied
 
-I kept the data wide, similar to the way I found it in the original X\_test.txt and
-X\_train.txt files. I did not see any advantage to narrowing it. The data was already tidy 
-in that each column was a single measurement for a single activity and subject.
+I kept the data wide, similar to the way I found it in the original X\_test.txt and X\_train.txt files. I did not see any advantage to narrowing it. The data was already tidy in that each column was a single measurement for a single activity and subject.
 
-I made modest changes to the column names. I believe the original names were fairly
-readable and that expanding them too much would make them less readable. Starting with
-the original variable names, I made the following changes to arrive at the Step 5
-variable names.
+I made modest changes to the column names. I believe the original names were fairly readable and that expanding them too much would make them less readable. Starting with the original variable names, I made the following changes to arrive at the Step 5 variable names.
 
 Therefore:
 
@@ -134,22 +118,36 @@ input variable.
 
 For example:
 * The original variable name ```fBodyGyro-std()-X``` was converted to 
-```meanOfFreqBodyGyroStdX` in the output
+```meanOfFreqBodyGyroStdX``` in the output
 * The original variable name ```tGravityAcc-mean()-X``` was converted to 
 ```meanOfTimeGravityAccMeanX``` in the output.
-
 
 ## Units
 The units of the output variables are the same as those of the original variables.
 
-
 ## Script Processing
 
-The script run_analysis.R performs the transformation between the original data and the
-output data, using the following steps.
+The script run_analysis.R performs the transformation between the original data and the output data, using the following steps.
 
-
-
+* Prepare Test data
+  * Load test data
+  * Attach the subject identifier to the test data.
+  * Translate activity numbers to corresponding codes. See activity\_labels.txt for the number-to-code mapping.
+  * Select out just the -mean() and -std() columns.
+  * Apply the correct column headers.
+    
+* Prepare Train data
+  * Load train data
+  * Attach the subject identifier to train data.
+  * Translate activity numbers to corresponding codes  See activity\_labels.txt for the number-to-code mapping.
+  * Select out just the -mean() and -std() columns.
+  * Apply the correct column names.
+    
+* Combine the train and test data into a single data frame
+    
+* Group the combined data by subject and activity, then take the mean of all the measurements.
+    
+* Output the summarized data frame.
 
 ## Output
 
@@ -166,5 +164,4 @@ The variables in the output are the following.
 |--------|-----------|
 |activity|The activity of the measurements, given as the text code.|
 |subject|The Subject ID of the subject of the measurements.|
-|meanOf...|Mean of the corresponding original variable, grouped by activity and subject. 
-There are 66 such variables.|
+|meanOf...|Mean of the corresponding original variable, grouped by activity and subject. There are 66 such variables.|

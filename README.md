@@ -106,10 +106,10 @@ I kept the data wide, similar to the way I found it in the original X\_test.txt 
 
 I made modest changes to the column names. I believe the original names were fairly readable and that expanding them too much would make them less readable. Starting with the original variable names, I made the following changes to arrive at the Step 5 variable names.
 
-Therefore:
+Therefore I:
 
 * Removed hyphens and parentheses.
-* Kept camel case, since making such long variables all lower case would have made them
+* Kept camel case (camelCase), since making such long variables all lower case would have made them
 less readable, not more readable.
 * Expanded "t" to "time".
 * Expanded "f" to "freq".
@@ -130,15 +130,15 @@ The units of the output variables are the same as those of the original variable
 The script run_analysis.R performs the transformation between the original data and the output data, using the following steps.
 
 * Prepare Test data
-  * Load test data
-  * Attach the subject identifier to the test data.
+  * Load Test data
+  * Attach the subject identifier to the Test data.
   * Translate activity numbers to corresponding codes. See activity\_labels.txt for the number-to-code mapping.
   * Select out just the -mean() and -std() columns.
   * Apply the correct column headers.
     
 * Prepare Train data
-  * Load train data
-  * Attach the subject identifier to train data.
+  * Load Train data
+  * Attach the subject identifier to Train data.
   * Translate activity numbers to corresponding codes  See activity\_labels.txt for the number-to-code mapping.
   * Select out just the -mean() and -std() columns.
   * Apply the correct column names.
@@ -150,7 +150,6 @@ The script run_analysis.R performs the transformation between the original data 
 * Output the summarized data frame.
 
 ## Output
-
 The output of the script is called ```step5.txt``` and can be imported into R with the 
 following command.
 

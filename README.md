@@ -6,11 +6,22 @@ This is a writeup of the Coursera Cleaning Data Project.
 
 ## Initial Data
 The initial data was provided as part of the assignment, in the file
-getdata-projectfiles-UCI HAR Dataset.zip
+```getdata-projectfiles-UCI HAR Dataset.zip```
 
-I used the data in the folder UCI HAR Dataset/test and UCI HAR Dataset/train. I used
-the subject*, X*, and y* files in each of test and train. I did NOT find it necessary
-to use any of the data in the Inertial Signals directories.
+I used the data in the folder ```UCI HAR Dataset/test``` and ```UCI HAR Dataset/train```. 
+I used the following files as inputs.
+
+
+|Filename|Data Description|
+|+-------|+---------------|
+|subject\_test.txt|Subject ID's from the Test set.|
+|y\_test.txt|Activity ID's from the Test set.|
+|X\_test.txt|Measurements from the Test set.|
+|subject_train.txt|Subject ID's from the Train set.|
+|y\_train.txt|Activity ID's from the Train set.|
+|X\_train.txt|Measurements from the Train set.|
+
+I did NOT find it necessary to use any of the data in the ```Inertial Signals``` folders.
 
 
 ## Assignment
@@ -29,7 +40,7 @@ of the form *-mean() or *-std(). This included 33 mean columns and 33 standard d
 columns.
 
 |Column Number|Original Variable Name|
-|-------------|----------------------|
+|+------------|+---------------------|
 |1|tBodyAcc-mean()-X|
 |2|tBodyAcc-mean()-Y|
 |3|tBodyAcc-mean()-Z|
@@ -121,14 +132,24 @@ less readable, not more readable.
 * Prepended "meanOf", since each output variable is the mean of values from the 
 input variable.
 
-For example, the original variable name fBodyGyro-std()-X was converted to 
-meanOfFreqBodyGyroStdX in the output, and the original variable name tGravityAcc-mean()-X 
-was converted to meanOfTimeGravityAccMeanX in the output.
+For example:
+* The original variable name ```fBodyGyro-std()-X``` was converted to 
+```meanOfFreqBodyGyroStdX` in the output
+* The original variable name ```tGravityAcc-mean()-X``` was converted to 
+```meanOfTimeGravityAccMeanX``` in the output.
 
 
 ## Units
 
-## <> Script Processing
+
+
+## Script Processing
+
+The script run_analysis.R performs the transformation between the original data and the
+output data, using the following steps.
+
+
+
 
 ## Output
 
@@ -138,3 +159,15 @@ following command.
 ```
 read.table("step5.txt", header=TRUE)
 ```
+
+The variables in the output are the following.
+
+|Variable|Description|
+|+-------|+----------|
+|activity|The activity of the measurements, given as the text code.|
+|subject|The Subject ID of the subject of the measurements.|
+|
+
+
+
+

@@ -166,7 +166,7 @@ The variables in the output are the following.
 |+-------|+----------|
 |activity|The activity of the measurements, given as the text code.|
 |subject|The Subject ID of the subject of the measurements.|
-|
+
 
 
 

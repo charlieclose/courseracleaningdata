@@ -127,19 +127,19 @@ The units of the output variables are the same as those of the original variable
 
 ## Script Processing
 
-The script run_analysis.R performs the transformation between the original data and the output data, using the following steps.
+The script ```run_analysis.R``` performs the transformation between the original data and the output data, using the following steps.
 
 * Prepare Test data
   * Load Test data
   * Attach the subject identifier to the Test data.
-  * Translate activity numbers to corresponding codes. See activity\_labels.txt for the number-to-code mapping.
+  * Translate activity numbers to corresponding codes. See ```activity\_labels.txt``` for the number-to-code mapping.
   * Select out just the -mean() and -std() columns.
   * Apply the correct column headers.
     
 * Prepare Train data
   * Load Train data
   * Attach the subject identifier to Train data.
-  * Translate activity numbers to corresponding codes  See activity\_labels.txt for the number-to-code mapping.
+  * Translate activity numbers to corresponding codes  See ```activity\_labels.txt``` for the number-to-code mapping.
   * Select out just the -mean() and -std() columns.
   * Apply the correct column names.
     
@@ -163,4 +163,4 @@ The variables in the output are the following.
 |--------|-----------|
 |activity|The activity of the measurements, given as the text code.|
 |subject|The Subject ID of the subject of the measurements.|
-|meanOf...|Mean of the corresponding original variable, grouped by activity and subject. There are 66 such variables.|
+|meanOf...|Mean of the corresponding original variable, grouped by activity and subject. There are 66 such variables given in the same order as the original variables.|

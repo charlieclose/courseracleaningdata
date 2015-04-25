@@ -23,7 +23,7 @@ I used the following files as inputs.
 I did NOT find it necessary to use any of the data in the ```Inertial Signals``` folders.
 
 ## Assignment
-The assignment was to read the measurements in the test and training data sets, combine them, tidy them, and output the mean of the measurements grouped by activity and subject ID.
+The assignment was to read the measurements in the Test and Train data sets, combine them, tidy them, and output the mean of the measurements grouped by activity and subject ID.
 
 ## Variables applied
 
@@ -102,7 +102,7 @@ I interpreted the requirement to mean all variables whose names were of the form
 
 ## Tidy standards applied
 
-I kept the data wide, similar to the way I found it in the original X\_test.txt and X\_train.txt files. I did not see any advantage to narrowing it. The data was already tidy in that each column was a single measurement for a single activity and subject.
+I kept the data wide, similar to the way I found it in the original ```X\_test.txt``` and ```X\_train.txt``` files. I did not see any advantage to narrowing it. The data was already tidy in that each column was a single measurement for a single activity and subject.
 
 I made modest changes to the column names. I believe the original names were fairly readable and that expanding them too much would make them less readable. Starting with the original variable names, I made the following changes to arrive at the Step 5 variable names.
 

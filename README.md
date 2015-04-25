@@ -13,7 +13,13 @@ I used the following files as inputs.
 
 
 |Filename|Data Description|
-|+-------|+---------------|
+|--------|----------------|
+|subject\_test.txt|Subject ID's from the Test set.|
+|y\_test.txt|Activity ID's from the Test set.|
+|X\_test.txt|Measurements from the Test set.|
+|subject_train.txt|Subject ID's from the Train set.|
+|y\_train.txt|Activity ID's from the Train set.|
+|X\_train.txt|Measurements from the Train set.|
 
 I did NOT find it necessary to use any of the data in the ```Inertial Signals``` folders.
 
@@ -34,7 +40,7 @@ of the form *-mean() or *-std(). This included 33 mean columns and 33 standard d
 columns.
 
 |Column Number|Original Variable Name|
-|+------------|+---------------------|
+|-------------|----------------------|
 |1|tBodyAcc-mean()-X|
 |2|tBodyAcc-mean()-Y|
 |3|tBodyAcc-mean()-Z|
@@ -107,9 +113,9 @@ columns.
 
 ## Tidy standards applied
 
-I kept the data wide, similar to the way I found it in the original X* files. I did not
-see any advantage to narrowing it. The data was already tidy in that each column 
-was a single measurement for a single activity and subject.
+I kept the data wide, similar to the way I found it in the original X\_test.txt and
+X\_train.txt files. I did not see any advantage to narrowing it. The data was already tidy 
+in that each column was a single measurement for a single activity and subject.
 
 I made modest changes to the column names. I believe the original names were fairly
 readable and that expanding them too much would make them less readable. Starting with
@@ -134,7 +140,7 @@ For example:
 
 
 ## Units
-
+The units of the output variables are the same as those of the original variables.
 
 
 ## Script Processing
@@ -157,11 +163,8 @@ read.table("step5.txt", header=TRUE)
 The variables in the output are the following.
 
 |Variable|Description|
-|+-------|+----------|
+|--------|-----------|
 |activity|The activity of the measurements, given as the text code.|
 |subject|The Subject ID of the subject of the measurements.|
-
-
-
-
-
+|meanOf...|Mean of the corresponding original variable, grouped by activity and subject. 
+There are 66 such variables.|
